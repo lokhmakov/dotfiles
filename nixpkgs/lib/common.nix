@@ -7,8 +7,12 @@
     tmux
     bottom
     du-dust
+    
     yarn
+    
     docker
+
+    nmap
   ];
 
   programs.tmux = {

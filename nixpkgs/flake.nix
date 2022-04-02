@@ -10,6 +10,16 @@
 
   outputs = inputs: {
     homeConfigurations = {
+      mac = inputs.home-manager.lib.homeManagerConfiguration {
+        system = "aarch64-darwin";
+        homeDirectory = "/Users/lokhmakov";
+        username = "lokhmakov";
+        configuration.imports = [
+          ./lib/home-manager.nix
+          ./lib/common.nix
+        ];
+      };
+
       gitpod = inputs.home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux";
         homeDirectory = "/home/gitpod";
