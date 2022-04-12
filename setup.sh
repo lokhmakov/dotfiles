@@ -4,6 +4,8 @@ set -ex
 
 date
 
+exit 0
+
 mv ~/.config/nix ~/.config/nix-backup
 ln -sv $HOME/.dotfiles/nix $HOME/.config/nix
 mv ~/.config/nixpkgs ~/.config/nixpkgs-backup
