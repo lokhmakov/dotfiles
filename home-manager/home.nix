@@ -24,8 +24,13 @@
     exa
     fzf
     httpie
+    imagemagick
     jq
+    kubectl
+    kubectx
+    kubernetes-helm
     m-cli
+    mmv-go
     ripgrep
     tldr
 
@@ -48,7 +53,11 @@
   programs.home-manager.enable = true;
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
-  programs.tmux.enable = true;
+  programs.tmux = {
+    enable = true;
+    terminal = "screen-256color";
+    extraConfig = builtins.readFile ./tmux.conf;
+  };
 
   programs.kitty = {
     enable = true;
