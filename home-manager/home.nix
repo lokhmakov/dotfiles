@@ -15,9 +15,15 @@
     fzf
     ripgrep
     m-cli
-    meslo-lgs-nf
     nodejs
     nodePackages.pnpm
+
+    ## Fonts
+    meslo-lgs-nf
+    jetbrains-mono
+    fira fira-code
+    source-sans-pro source-code-pro
+    font-awesome_5
   ];
 
   programs.bat.enable = true;
@@ -29,6 +35,31 @@
   programs.htop.settings.show_program_path = true;
   programs.tmux.enable = true;
 
+  programs.kitty = {
+    enable = true;
+    package = pkgs.kitty;
+    font = {
+      package = pkgs.jetbrains-mono;
+      name = "JetBrains Mono";
+    };
+    theme = "One Dark";
+    settings = {
+      editor = "~/.nix-profile/bin/nvim";
+      bold_font = "auto";
+      italic_font = "auto";
+      bold_italic_font = "auto";
+      font_size = 12;
+      strip_trailing_spaces = "smart";
+      enable_audio_bell = "no";
+      term = "xterm-256color";
+      macos_titlebar_color = "background";
+      macos_option_as_alt = "yes";
+      scrollback_lines = 10000;
+      shell_integration = "no-cursor";
+      confirm_os_window_close = 0;
+    };
+  };
+
   programs.neovim = {
     enable = true;
 
@@ -39,6 +70,7 @@
 
     extraConfig = ''
       set number relativenumber
+      set clipboard=unnamed "Copy by default in system buffer
       colorscheme gruvbox
     '';
 
