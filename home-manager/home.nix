@@ -8,13 +8,27 @@
 
   fonts.fontconfig.enable = true;
 
+  home.sessionVariables = {
+    DEVELOPER = "lokhmakov";
+    VISUAL = "${pkgs.neovim}/bin/nvim";
+  };
+
   home.packages = with pkgs; [
     bottom
+    docker
+    docker-compose    
     du-dust
-    jq
+    duf
+    exa
     fzf
-    ripgrep
+    httpie
+    jq
+    karabiner-elements
     m-cli
+    ripgrep
+    tldr
+
+    # NodeJs
     nodejs
     nodePackages.pnpm
 
@@ -102,6 +116,20 @@
         "history-substring-search"
         "prompt"
       ];
+    };
+
+    shellAliases = {
+      icat = "${pkgs.kitty}/bin/kitty +kitten icat";
+      d = "${pkgs.kitty}/bin/kitty +kitten diff";
+      gd = "${pkgs.git}/bin/git difftool --no-symlinks --dir-diff";
+      gs = "${pkgs.git}/bin/git status";
+      pcat = "pygmentize -f terminal256 -O style=paraiso-dark -g";
+      ls = "exa";
+      ll = "exa -lh";
+      la = "exa -lhaa";
+      lt = "exa -lTh";
+      lg = "exa -lh --git";
+      lgt = "exa -lTh --git";
     };
 
     initExtra = ''
