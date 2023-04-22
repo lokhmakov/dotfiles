@@ -23,6 +23,7 @@
     duf
     exa
     fzf
+    gnused
     httpie
     imagemagick
     jq
@@ -33,6 +34,7 @@
     mmv-go
     ripgrep
     tldr
+    trash-cli
 
     # NodeJs
     nodejs
@@ -82,6 +84,12 @@
       shell_integration = "no-cursor";
       confirm_os_window_close = 0;
     };
+  };
+
+  programs.lf = {
+    enable = true;
+
+    extraConfig = builtins.readFile ./lfrc;
   };
 
   programs.neovim = {
