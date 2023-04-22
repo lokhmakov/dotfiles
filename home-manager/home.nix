@@ -25,7 +25,6 @@
     fzf
     httpie
     jq
-    karabiner-elements
     m-cli
     ripgrep
     tldr
@@ -133,6 +132,7 @@
       lt = "exa -lTh";
       lg = "exa -lh --git";
       lgt = "exa -lTh --git";
+      v = "vi $(fzf)";
     };
 
     initExtra = ''
