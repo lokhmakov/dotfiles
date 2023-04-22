@@ -1,3 +1,5 @@
+set previewer pistol
+
 cmd trash %trash $fx
 map D trash
 

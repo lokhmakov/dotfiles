@@ -22,7 +22,6 @@
     du-dust
     duf
     exa
-    fzf
     gnused
     httpie
     imagemagick
@@ -32,9 +31,11 @@
     kubernetes-helm
     m-cli
     mmv-go
+    pistol
     ripgrep
     tldr
     trash-cli
+    viu
 
     # NodeJs
     nodejs
@@ -55,6 +56,12 @@
   programs.home-manager.enable = true;
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
+
+  programs.fzf = {
+    enable = true;
+    defaultOptions = ["--height 50% --preview='pistol {}'"];
+  };
+
   programs.tmux = {
     enable = true;
     terminal = "screen-256color";
@@ -152,7 +159,6 @@
       lt = "exa -lTh";
       lg = "exa -lh --git";
       lgt = "exa -lTh --git";
-      v = "vi $(fzf)";
     };
 
     initExtra = ''
