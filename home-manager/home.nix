@@ -18,7 +18,7 @@
   home.packages = with pkgs; [
     bottom
     docker
-    docker-compose    
+    docker-compose
     du-dust
     duf
     exa
@@ -124,6 +124,9 @@
     shellAliases = {
       icat = "${pkgs.kitty}/bin/kitty +kitten icat";
       d = "${pkgs.kitty}/bin/kitty +kitten diff";
+      hm = "home-manager";
+      hs = "home-manager switch";
+      he = "home-manager edit";
       gd = "${pkgs.git}/bin/git difftool --no-symlinks --dir-diff";
       gs = "${pkgs.git}/bin/git status";
       ls = "exa";
