@@ -13,6 +13,8 @@
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
+  home.file.".config/karabiner/karabiner.json".text = builtins.readFile ./karabiner.json;
+
   home.packages = with pkgs; [
     bottom
     docker
@@ -132,6 +134,9 @@
     };
 
     initExtra = ''
+      bindkey "\e[1;3D" backward-word # kitty ⌥←
+      bindkey "\e[1;3C" forward-word # kitty ⌥→
+
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
     '' + builtins.readFile ./.p10k.zsh;
   };
