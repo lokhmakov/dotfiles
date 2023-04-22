@@ -88,6 +88,8 @@
       set number relativenumber
       set clipboard=unnamed "Copy by default in system buffer
       colorscheme gruvbox
+      set expandtab
+      set shiftwidth=2
     '';
 
     plugins = with pkgs.vimPlugins; [

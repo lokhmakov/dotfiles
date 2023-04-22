@@ -12,58 +12,33 @@
         },
         "rules": [
           {
-            "description": "Shift Capslock sends Shift-Hyper, or escape if by itself",
-            "manipulators": [
+            "title": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Caps Lock if alone)",
+            "rules": [
               {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_shift"
-                    ]
-                  }
-                },
-                "to": [
+                "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Caps Lock if alone)",
+                "manipulators": [
                   {
-                    "key_code": "left_shift",
-                    "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
+                    "from": {
+                      "key_code": "caps_lock"
+                    },
+                    "to": [
+                      {
+                        "key_code": "left_shift",
+                        "modifiers": [
+                          "left_command",
+                          "left_control",
+                          "left_option"
+                        ]
+                      }
+                    ],
+                    "to_if_alone": [
+                      {
+                        "key_code": "caps_lock"
+                      }
+                    ],
+                    "type": "basic"
                   }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Capslock sends Hyper, or escape if by itself",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock"
-                },
-                "to": [
-                  {
-                    "key_code": "left_command",
-                    "modifiers": [
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           }
