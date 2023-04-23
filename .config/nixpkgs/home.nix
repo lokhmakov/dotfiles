@@ -49,24 +49,6 @@
     font-awesome_5
   ];
 
-  # homebrew = {
-  #   enable = true;
-  #   onActivation = {
-  #     cleanup = "zap";
-  #     autoUpdate = true;
-  #   };
-
-  #   brews = [
-  #     "yabai"
-  #     "sketchybar"
-  #     "ifstat"
-  #   ];
-
-  #   casks = [
-  #     "karabiner-elements"
-  #   ];
-  # };
-
   programs.bat.enable = true;
   programs.broot.enable = true;
   programs.direnv.enable = true;
