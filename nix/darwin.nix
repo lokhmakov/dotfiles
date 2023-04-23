@@ -11,6 +11,15 @@
   ];
   users.nix.configureBuildUsers = true;
 
+  users = {
+    users = {
+      lokhmakov = {
+        shell = pkgs.zsh;
+        home = "/Users/lokhmakov";
+      };
+    };
+  };  
+
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
@@ -30,7 +39,7 @@
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
-    # kitty
+    kitty
     terminal-notifier
   ];
 

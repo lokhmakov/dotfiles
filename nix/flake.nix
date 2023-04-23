@@ -44,6 +44,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.lokhmakov = import ./home.nix;            
           }
+          ./homebrew.nix
         ];
       };
     };
