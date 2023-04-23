@@ -15,6 +15,7 @@
 
     casks = [
       "karabiner-elements"
+      "slack"
     ];
 
     taps = [
