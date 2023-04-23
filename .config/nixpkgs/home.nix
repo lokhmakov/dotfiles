@@ -3,8 +3,8 @@
 {
   home.username = "lokhmakov";
   home.homeDirectory = "/Users/lokhmakov";
-
   home.stateVersion = "22.11";
+  programs.home-manager.enable = true;
 
   fonts.fontconfig.enable = true;
 
@@ -71,7 +71,6 @@
   programs.broot.enable = true;
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-  programs.home-manager.enable = true;
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
