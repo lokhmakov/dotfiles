@@ -182,6 +182,6 @@
       bindkey "\e[1;3C" forward-word # kitty ⌥→
 
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
-    '' + builtins.readFile ./.p10k.zsh;
+    '' + builtins.readFile ./configs/.p10k.zsh;
   };
 }
