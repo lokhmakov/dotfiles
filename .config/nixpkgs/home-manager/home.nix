@@ -13,7 +13,7 @@
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
-  home.file.".config/karabiner/karabiner.json".text = builtins.readFile ./karabiner.json;
+  home.file.".config/karabiner/karabiner.json".text = builtins.readFile ./configs/karabiner.json;
 
   home.packages = with pkgs; [
     bottom
@@ -49,6 +49,24 @@
     font-awesome_5
   ];
 
+  # homebrew = {
+  #   enable = true;
+  #   onActivation = {
+  #     cleanup = "zap";
+  #     autoUpdate = true;
+  #   };
+
+  #   brews = [
+  #     "yabai"
+  #     "sketchybar"
+  #     "ifstat"
+  #   ];
+
+  #   casks = [
+  #     "karabiner-elements"
+  #   ];
+  # };
+
   programs.bat.enable = true;
   programs.broot.enable = true;
   programs.direnv.enable = true;
@@ -65,7 +83,7 @@
   programs.tmux = {
     enable = true;
     terminal = "screen-256color";
-    extraConfig = builtins.readFile ./tmux.conf;
+    extraConfig = builtins.readFile ./configs/tmux.conf;
   };
 
   programs.kitty = {
@@ -95,7 +113,6 @@
 
   programs.lf = {
     enable = true;
-
     extraConfig = builtins.readFile ./lfrc;
   };
 

@@ -1,10 +1,11 @@
-#!/usr/bin/bash -i
+#!/bin/bash -i
 
 set -ex
 
 date
 
-mv ~/.config/home-manager ~/.config/homa-manager-backup
-ln -sv ~/dotfiles/home-manager ~/.config/
+#mv ~/.config/home-manager ~/.config/home-manager-backup
+ln -sv ~/.dotfiles/.config/nix ~/.config
+ln -sv ~/.dotfiles/.config/nixpkgs ~/.config
 
 date
