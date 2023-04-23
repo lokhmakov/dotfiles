@@ -33,16 +33,16 @@
   in
   {
     darwinConfigurations = rec {
-      lokhmakov = darwinSystem {
+      mac = darwinSystem {
         system = "aarch64-darwin";
-        modules = [ 
+        modules = attrValues self.darwinModules ++ [ 
           ./darwin.nix
           home-manager.darwinModules.home-manager
           {
             nixpkgs = nixpkgsConfig;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.jun = import ./home.nix;            
+            home-manager.users.lokhmakov = import ./home.nix;            
           }
         ];
       };
@@ -58,5 +58,7 @@
           };
         }; 
       };
+
+    darwinModules = {};
  };
 }
