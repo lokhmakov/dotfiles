@@ -112,7 +112,7 @@
 
   programs.lf = {
     enable = true;
-    extraConfig = builtins.readFile ./lfrc;
+    extraConfig = builtins.readFile ./configs/lfrc;
   };
 
   programs.neovim = {
