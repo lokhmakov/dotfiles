@@ -40,9 +40,14 @@
           home-manager.darwinModules.home-manager
           {
             nixpkgs = nixpkgsConfig;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lokhmakov = import ./home.nix;            
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.lokhmakov.imports = [
+                ./home.nix
+                ./darwin
+              ];
+            };
           }
           ./homebrew.nix
         ];

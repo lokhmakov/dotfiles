@@ -9,13 +9,29 @@
     };
 
     brews = [
-      "yabai"
       "sketchybar"
+      "skhd"
+      "yabai"
     ];
 
     casks = [
+      "brave-browser"
+      "discord"
+      "eul"
+      "firefox"
       "karabiner-elements"
+      "kap"
+      "postman"
+      "raycast"
+      "sf-symbols"
+      "shottr"
       "slack"
+      "telegram"
+      "the-unarchiver"
+      "time-out"
+      "ubersicht"
+      "vlc"
+      "zoom"
     ];
 
     taps = [
