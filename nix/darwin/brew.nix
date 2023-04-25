@@ -16,6 +16,7 @@
 
     casks = [
       "brave-browser"
+      "gitup"
       "discord"
       "eul"
       "firefox"
