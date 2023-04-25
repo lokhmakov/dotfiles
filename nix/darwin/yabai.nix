@@ -47,7 +47,7 @@
       yabai -m space 10 --label ten
       # assign apps to spaces
       yabai -m rule --add app="Slack" space=messages
-      yabai-m rule --add app="Telegram" space=messages
+      yabai -m rule --add app="Telegram" space=messages
       yabai -m rule --add app="Discord" space=messages
       yabai -m rule --add app="Google Chrome" space=seven
       yabai -m rule --add app="Microsoft Teams" space=chat
