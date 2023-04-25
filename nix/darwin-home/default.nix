@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
-    ./brew.nix
+    ./home.nix
+    ./yabai.nix
   ];
 }

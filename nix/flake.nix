@@ -36,7 +36,7 @@
       mac = darwinSystem {
         system = "aarch64-darwin";
         modules = attrValues self.darwinModules ++ [ 
-          ./darwin.nix
+          ./darwin/config.nix # Setup darwin
           home-manager.darwinModules.home-manager
           {
             nixpkgs = nixpkgsConfig;
@@ -44,12 +44,11 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.lokhmakov.imports = [
-                ./home.nix
-                ./darwin
+                ./darwin-home
               ];
             };
           }
-          ./homebrew.nix
+          ./darwin # Apply darwin stuff after home-manager
         ];
       };
     };

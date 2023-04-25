@@ -11,13 +11,13 @@
       yabai -m config external_bar all:0:39
       yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
       # borders
-      yabai -m config window_border on
-      yabai -m config window_border_width 2
-      yabai -m config window_border_radius 12
-      yabai -m config window_border_blur off
-      yabai -m config active_window_border_color 0xFF40FF00
-      yabai -m config normal_window_border_color 0x00FFFFFF
-      yabai -m config insert_feedback_color 0xffd75f5f
+      yabai -m config window_border off
+      # yabai -m config window_border_width 2
+      # yabai -m config window_border_radius 12
+      # yabai -m config window_border_blur off
+      # yabai -m config active_window_border_color 0xFF40FF00
+      # yabai -m config normal_window_border_color 0x00FFFFFF
+      # yabai -m config insert_feedback_color 0xffd75f5f
       yabai -m config window_shadow off
       # opacity
       yabai -m config window_opacity on
