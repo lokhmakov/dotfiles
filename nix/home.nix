@@ -165,8 +165,8 @@
       lg = "exa -lh --git";
       lgt = "exa -lTh --git";
 
-      mbuild = "~/.config/nix/mac-build.sh";
-      mup = "~/.config/nix/mac-up.sh";
+      mbuild = "~/.dotfiles/nix/mac-build.sh";
+      mup = "~/.dotfiles/nix/mac-up.sh";
     };
 
     initExtra = ''
