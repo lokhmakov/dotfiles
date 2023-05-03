@@ -16,10 +16,10 @@
 
     casks = [
       "brave-browser"
-      "gitup"
       "discord"
       "eul"
       "firefox"
+      "gitup"
       "karabiner-elements"
       "kap"
       "postman"
