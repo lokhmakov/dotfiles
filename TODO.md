@@ -1,0 +1,1 @@
+- [ ] Setup GIT_EDITOR to use neovim
