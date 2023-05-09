@@ -9,6 +9,7 @@
     };
 
     brews = [
+      "cf-cli@8"
       "sketchybar"
       "skhd"
       "yabai"
@@ -36,6 +37,8 @@
     ];
 
     taps = [
+      "cloudfoundry/tap" # cf-cli@8
+
       "homebrew/bundle"
       "homebrew/cask"
       "homebrew/cask-drivers"
