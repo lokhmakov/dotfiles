@@ -10,9 +10,9 @@
 
     brews = [
       "cf-cli@8"
-      "sketchybar"
-      "skhd"
-      "yabai"
+      # "sketchybar"
+      # "skhd"
+      # "yabai"
     ];
 
     casks = [
@@ -28,6 +28,7 @@
       "sf-symbols"
       "shottr"
       "slack"
+      "spectacle"
       "telegram"
       "the-unarchiver"
       "time-out"
@@ -46,8 +47,8 @@
       "homebrew/core"
       "homebrew/services"
 
-      "koekeishiya/formulae" # yabai
-      "FelixKratz/formulae" # sketchybar
+      # "koekeishiya/formulae" # yabai
+      # "FelixKratz/formulae" # sketchybar
     ];
   };
 }
