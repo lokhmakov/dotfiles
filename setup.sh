@@ -1,4 +1,4 @@
-#!/usr/bin/bash -i
+#!/bin/bash -i
 
 set -ex
 
@@ -7,9 +7,7 @@ date
 exit 0
 
 mv ~/.config/nix ~/.config/nix-backup
-ln -sv $HOME/.dotfiles/nix $HOME/.config/nix
-mv ~/.config/nixpkgs ~/.config/nixpkgs-backup
-ln -sv $HOME/.dotfiles/nixpkgs $HOME/.config/nixpkgs
+ln -sv ~/.dotfiles/nix ~/.config
 
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz home-manager
 nix-channel --update
@@ -23,5 +21,3 @@ nix-shell '<home-manager>' -A install
 pushd ~/.config/nixpkgs
 home-manager switch --flake .#gitpod
 popd
-
-date

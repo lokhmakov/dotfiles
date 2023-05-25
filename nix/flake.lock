@@ -1,0 +1,87 @@
+{
+  "nodes": {
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1682009832,
+        "narHash": "sha256-QdNOeFE7sI+0ddqVfn9vQDCUs7OdxhJ7evo9sdyP82Y=",
+        "owner": "lnl7",
+        "repo": "nix-darwin",
+        "rev": "a1ee4d333b092bc055655fb06229eb3013755812",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lnl7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1682273416,
+        "narHash": "sha256-YvRc5TOyf92Fcvt6cYfsqxfjqalAUME3Klv4IbdhkBE=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "a5a294a622a7d3a837aaa145334e4d813c1bc5b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1659446231,
+        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-21.11-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1682109806,
+        "narHash": "sha256-d9g7RKNShMLboTWwukM+RObDWWpHKaqTYXB48clBWXI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2362848adf8def2866fabbffc50462e929d7fffb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "darwin": "darwin",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
