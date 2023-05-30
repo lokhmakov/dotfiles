@@ -21,6 +21,7 @@
       "discord"
       "eul"
       "firefox"
+      "figma"
       "gitup"
       "karabiner-elements"
       "kap"
