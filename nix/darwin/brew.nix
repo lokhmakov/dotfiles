@@ -16,6 +16,7 @@
     ];
 
     casks = [
+      "anki"
       "brave-browser"
       "discord"
       "eul"
