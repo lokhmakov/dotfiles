@@ -10,6 +10,8 @@
 
     brews = [
       "cf-cli@8"
+      "terraform"
+      "telnet"
       # "sketchybar"
       # "skhd"
       # "yabai"
