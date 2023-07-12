@@ -20,6 +20,7 @@
     casks = [
       "anki"
       "brave-browser"
+      "dbeaver-community"
       "discord"
       "eul"
       "firefox"
