@@ -9,6 +9,7 @@
     };
 
     brews = [
+      "awscli@2"
       "cf-cli@8"
       "terraform"
       "telnet"
@@ -24,6 +25,7 @@
       "discord"
       "eul"
       "firefox"
+      "firefox-developer-edition"
       "figma"
       "gitup"
       "karabiner-elements"
@@ -43,6 +45,7 @@
     ];
 
     taps = [
+      "homebrew/cask-versions"
       "cloudfoundry/tap" # cf-cli@8
 
       "homebrew/bundle"
