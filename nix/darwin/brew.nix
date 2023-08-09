@@ -27,6 +27,7 @@
       "firefox"
       "firefox-developer-edition"
       "figma"
+      "fork"
       "gitup"
       "karabiner-elements"
       "kap"
