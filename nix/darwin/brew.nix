@@ -15,6 +15,7 @@
       "telnet"
       # "sketchybar"
       # "skhd"
+      "pyenv"
       # "yabai"
     ];
 
@@ -31,6 +32,7 @@
       "gitup"
       "karabiner-elements"
       "kap"
+      "ngrok"
       "postman"
       "raycast"
       "sf-symbols"
