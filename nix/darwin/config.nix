@@ -18,7 +18,7 @@
         home = "/Users/lokhmakov";
       };
     };
-  };  
+  };
 
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;

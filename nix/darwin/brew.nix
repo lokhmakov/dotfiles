@@ -16,6 +16,9 @@
       # "sketchybar"
       # "skhd"
       "pyenv"
+      "portaudio"
+
+      "libpq"
       # "yabai"
     ];
 
@@ -32,7 +35,10 @@
       "gitup"
       "karabiner-elements"
       "kap"
+      # "mockoon"
+      "miniconda"
       "ngrok"
+      "orbstack"
       "postman"
       "raycast"
       "sf-symbols"
@@ -45,6 +51,9 @@
       "ubersicht"
       "vlc"
       "zoom"
+
+      "vmware-fusion"
+      "microsoft-teams"
     ];
 
     taps = [

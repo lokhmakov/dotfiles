@@ -14,11 +14,10 @@
 
   home.packages = with pkgs; [
     bottom
+    bun
     cachix
     coreutils
     curl
-    docker
-    docker-compose
     du-dust
     duf
     exa
@@ -30,9 +29,11 @@
     kubectx
     kubernetes-helm
     mmv-go
-    niv    
+    niv
+    rnix-lsp
     pistol
     ripgrep
+    scc
     tldr
     viu
     wget
@@ -47,13 +48,15 @@
     ## Fonts
     meslo-lgs-nf
     jetbrains-mono
-    fira fira-code
-    source-sans-pro source-code-pro
-    font-awesome_5    
+    fira
+    fira-code
+    source-sans-pro
+    source-code-pro
+    font-awesome_5
   ] ++ lib.optionals stdenv.isDarwin [
     cocoapods
     m-cli
-    trash-cli    
+    trash-cli
   ];
 
   programs.bat.enable = true;
@@ -65,7 +68,7 @@
 
   programs.fzf = {
     enable = true;
-    defaultOptions = ["--height 50% --preview='pistol {}'"];
+    defaultOptions = [ "--height 50% --preview='pistol {}'" ];
   };
 
   programs.tmux = {
@@ -164,12 +167,16 @@
       lt = "exa -lTh";
       lg = "exa -lh --git";
       lgt = "exa -lTh --git";
+      bunx = "bun x";
 
       mbuild = "~/.dotfiles/nix/mac-build.sh";
       mup = "~/.dotfiles/nix/mac-up.sh";
     };
 
     initExtra = ''
+      export BUN_INSTALL="$HOME/.bun"
+      export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
+      
       bindkey "\e[1;3D" backward-word # kitty ⌥←
       bindkey "\e[1;3C" forward-word # kitty ⌥→
 

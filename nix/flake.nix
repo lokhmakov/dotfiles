@@ -9,11 +9,11 @@
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";    
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
-  let 
+  let
 
     inherit (darwin.lib) darwinSystem;
     inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
@@ -26,16 +26,18 @@
             idris2
             nix-index
             niv
-            purescript;
+            purescript
+            rnix-lsp
+            scc;
         })
       );
-    }; 
+    };
   in
   {
     darwinConfigurations = rec {
       mac = darwinSystem {
         system = "aarch64-darwin";
-        modules = attrValues self.darwinModules ++ [ 
+        modules = attrValues self.darwinModules ++ [
           ./darwin/config.nix # Setup darwin
           home-manager.darwinModules.home-manager
           {
@@ -61,7 +63,7 @@
             system = "x86_64-darwin";
             inherit (nixpkgsConfig) config;
           };
-        }; 
+        };
       };
 
     darwinModules = {};
