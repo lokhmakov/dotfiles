@@ -52,6 +52,8 @@
       "vlc"
       "zoom"
 
+      "visual-studio-code-insiders"
+
       "vmware-fusion"
       "microsoft-teams"
     ];

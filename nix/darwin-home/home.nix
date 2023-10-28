@@ -20,7 +20,7 @@
     curl
     du-dust
     duf
-    exa
+    eza
     gnused
     httpie
     imagemagick
@@ -38,11 +38,20 @@
     viu
     wget
 
+    # go
+    go
+    gopls
+
+    # rust
+    # rustc
+    rustup
+
     # NodeJs
     nodejs
     nodePackages.node2nix
     nodePackages.pnpm
     nodePackages.typescript
+    neovim
     purescript
 
     ## Fonts
@@ -107,27 +116,37 @@
     extraConfig = builtins.readFile ./configs/lfrc;
   };
 
-  programs.neovim = {
+  programs.zellij = {
     enable = true;
 
-    defaultEditor = true;
-
-    viAlias = true;
-    vimAlias = true;
-
-    extraConfig = ''
-      set number relativenumber
-      set clipboard=unnamed "Copy by default in system buffer
-      colorscheme gruvbox
-      set expandtab
-      set shiftwidth=2
-    '';
-
-    plugins = with pkgs.vimPlugins; [
-      vim-nix
-      gruvbox
-    ];
+    settings = {
+      theme = lib.mkDefault "dracula";
+      # default_layout = "compact";
+      pane_frames = false;
+    };
   };
+
+  # programs.neovim = {
+  #   enable = true;
+
+  #   defaultEditor = true;
+
+  #   viAlias = true;
+  #   vimAlias = true;
+
+  #   extraConfig = ''
+  #     set number relativenumber
+  #     set clipboard=unnamed "Copy by default in system buffer
+  #     colorscheme gruvbox
+  #     set expandtab
+  #     set shiftwidth=2
+  #   '';
+
+  #   plugins = with pkgs.vimPlugins; [
+  #     vim-nix
+  #     gruvbox
+  #   ];
+  # };
 
   programs.zsh = {
     enable = true;
@@ -161,12 +180,12 @@
       he = "home-manager edit";
       gd = "${pkgs.git}/bin/git difftool --no-symlinks --dir-diff";
       gs = "${pkgs.git}/bin/git status";
-      ls = "exa";
-      ll = "exa -lh";
-      la = "exa -lhaa";
-      lt = "exa -lTh";
-      lg = "exa -lh --git";
-      lgt = "exa -lTh --git";
+      ls = "eza";
+      ll = "eza -lh";
+      la = "eza -lhaa";
+      lt = "eza -lTh";
+      lg = "eza -lh --git";
+      lgt = "eza -lTh --git";
       bunx = "bun x";
 
       mbuild = "~/.dotfiles/nix/mac-build.sh";
@@ -176,7 +195,9 @@
     initExtra = ''
       export BUN_INSTALL="$HOME/.bun"
       export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
-      
+      export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
+      export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
+
       bindkey "\e[1;3D" backward-word # kitty ⌥←
       bindkey "\e[1;3C" forward-word # kitty ⌥→
 

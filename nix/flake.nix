@@ -3,7 +3,8 @@
   description = "My Nix configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.05-darwin";
+    nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
     nixpkgs-unstable.url = github:NixOS/nixpkgs/nixpkgs-unstable;
 
     darwin.url = "github:lnl7/nix-darwin/master";
@@ -13,50 +14,50 @@
   };
 
   outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
-  let
+    let
 
-    inherit (darwin.lib) darwinSystem;
-    inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
+      inherit (darwin.lib) darwinSystem;
+      inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
 
-    nixpkgsConfig = {
-      config = { allowUnfree = true; };
-      overlays = attrValues self.overlays ++ singleton (
-        final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
-          inherit (final.pkgs-x86)
-            idris2
-            nix-index
-            niv
-            purescript
-            rnix-lsp
-            scc;
-        })
-      );
-    };
-  in
-  {
-    darwinConfigurations = rec {
-      mac = darwinSystem {
-        system = "aarch64-darwin";
-        modules = attrValues self.darwinModules ++ [
-          ./darwin/config.nix # Setup darwin
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs = nixpkgsConfig;
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.lokhmakov.imports = [
-                ./darwin-home
-              ];
-            };
-          }
-          ./darwin # Apply darwin stuff after home-manager
-        ];
+      nixpkgsConfig = {
+        config = { allowUnfree = true; };
+        overlays = attrValues self.overlays ++ singleton (
+          final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
+            inherit (final.pkgs-x86)
+              idris2
+              nix-index
+              niv
+              purescript
+              rnix-lsp
+              scc;
+          })
+        );
       };
-    };
+    in
+    {
+      darwinConfigurations = rec {
+        mac = darwinSystem {
+          system = "aarch64-darwin";
+          modules = attrValues self.darwinModules ++ [
+            ./darwin/config.nix # Setup darwin
+            home-manager.darwinModules.home-manager
+            {
+              nixpkgs = nixpkgsConfig;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.lokhmakov.imports = [
+                  ./darwin-home
+                ];
+              };
+            }
+            ./darwin # Apply darwin stuff after home-manager
+          ];
+        };
+      };
 
-    overlays = {
-      # Overlay useful on Macs with Apple Silicon
+      overlays = {
+        # Overlay useful on Macs with Apple Silicon
         apple-silicon = final: prev: optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
           # Add access to x86 packages system is running Apple Silicon
           pkgs-x86 = import inputs.nixpkgs-unstable {
@@ -66,6 +67,6 @@
         };
       };
 
-    darwinModules = {};
- };
+      darwinModules = { };
+    };
 }
