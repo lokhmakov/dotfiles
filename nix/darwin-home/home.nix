@@ -173,6 +173,8 @@
     };
 
     shellAliases = {
+      k = "kubectl";
+
       icat = "${pkgs.kitty}/bin/kitty +kitten icat";
       d = "${pkgs.kitty}/bin/kitty +kitten diff";
       hm = "home-manager";
@@ -196,6 +198,7 @@
       export BUN_INSTALL="$HOME/.bun"
       export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
+      export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
       export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
 
       bindkey "\e[1;3D" backward-word # kitty ⌥←

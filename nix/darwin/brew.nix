@@ -9,25 +9,50 @@
     };
 
     brews = [
+      "abseil"
       "awscli@2"
+      "croc"
       "cf-cli@8"
+      "dive"
+      "cmake"
+      "grpc"
       "terraform"
       "telnet"
+
+      # GitHub
+      "gh"
+
+      # k8s
+      "kubeseal"
+
+      # TEMPORAL
+      "tctl"
+      "temporal"
+
+      "openjdk"
       # "sketchybar"
       # "skhd"
       "pyenv"
       "portaudio"
+      "protobuf"
+
+      "pulumi"
 
       "libpq"
       # "yabai"
     ];
 
     casks = [
+      # k8s
+      "headlamp"
+      "rancher"
+
       "anki"
       "brave-browser"
       "dbeaver-community"
       "discord"
       "eul"
+      "fbreader"
       "firefox"
       "firefox-developer-edition"
       "figma"
@@ -41,6 +66,7 @@
       "orbstack"
       "postman"
       "raycast"
+      "qbittorrent"
       "sf-symbols"
       "shottr"
       "slack"
@@ -63,11 +89,11 @@
       "cloudfoundry/tap" # cf-cli@8
 
       "homebrew/bundle"
-      "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/cask-fonts"
-      "homebrew/core"
       "homebrew/services"
+
+      "pulumi/tap"
 
       # "koekeishiya/formulae" # yabai
       # "FelixKratz/formulae" # sketchybar
