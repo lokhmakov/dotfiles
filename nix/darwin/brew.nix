@@ -14,10 +14,14 @@
       "croc"
       "cf-cli@8"
       "dive"
+      "caddy"
       "cmake"
       "grpc"
       "terraform"
       "telnet"
+
+      "go"
+      "gopls"
 
       # GitHub
       "gh"
@@ -37,12 +41,15 @@
       "protobuf"
 
       "pulumi"
+      "crd2pulumi"
 
       "libpq"
       # "yabai"
     ];
 
     casks = [
+      "anydesk"
+
       # k8s
       "headlamp"
       "rancher"

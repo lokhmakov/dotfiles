@@ -39,8 +39,8 @@
     wget
 
     # go
-    go
-    gopls
+    #go
+    #gopls
 
     # rust
     # rustc
