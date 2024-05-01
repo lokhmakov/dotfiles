@@ -11,6 +11,9 @@
     brews = [
       "abseil"
       "awscli@2"
+
+      "bun"
+
       "croc"
       "cf-cli@8"
       "dive"
@@ -29,10 +32,14 @@
       # k8s
       "kubeseal"
 
+      # node
+      "node"
+
       # TEMPORAL
       "tctl"
       "temporal"
 
+      "oha"
       "openjdk"
       # "sketchybar"
       # "skhd"
@@ -45,6 +52,9 @@
 
       "libpq"
       # "yabai"
+      "yq"
+
+      "zig"
     ];
 
     casks = [
@@ -101,6 +111,8 @@
       "homebrew/services"
 
       "pulumi/tap"
+
+      "oven-sh/bun"
 
       # "koekeishiya/formulae" # yabai
       # "FelixKratz/formulae" # sketchybar

@@ -14,7 +14,6 @@
 
   home.packages = with pkgs; [
     bottom
-    bun
     cachix
     coreutils
     curl
@@ -47,10 +46,10 @@
     rustup
 
     # NodeJs
-    nodejs
-    nodePackages.node2nix
-    nodePackages.pnpm
-    nodePackages.typescript
+    #nodejs
+    #nodePackages.node2nix
+    #nodePackages.pnpm
+    #nodePackages.typescript
     neovim
     purescript
 
@@ -198,6 +197,7 @@
       export BUN_INSTALL="$HOME/.bun"
       export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
+      export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
       export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
       export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
 
