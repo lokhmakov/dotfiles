@@ -12,7 +12,7 @@
       "abseil"
       "awscli@2"
 
-      "bun"
+      # "bun"
 
       "croc"
       "cf-cli@8"
@@ -29,6 +29,8 @@
       # GitHub
       "gh"
 
+      "hyperfine"
+
       # k8s
       "kubeseal"
 
@@ -43,6 +45,7 @@
       "openjdk"
       # "sketchybar"
       # "skhd"
+      "python@3.9"
       "pyenv"
       "portaudio"
       "protobuf"
@@ -112,7 +115,7 @@
 
       "pulumi/tap"
 
-      "oven-sh/bun"
+      # "oven-sh/bun"
 
       # "koekeishiya/formulae" # yabai
       # "FelixKratz/formulae" # sketchybar
