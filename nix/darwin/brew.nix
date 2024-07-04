@@ -14,6 +14,8 @@
 
       # "bun"
 
+      "cloudflared"
+
       "croc"
       "cf-cli@8"
       "dive"
@@ -62,6 +64,9 @@
 
     casks = [
       "anydesk"
+
+      "background-music"
+      "eqmac"
 
       # k8s
       "headlamp"

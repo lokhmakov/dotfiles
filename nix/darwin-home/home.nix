@@ -16,6 +16,7 @@
     bottom
     cachix
     coreutils
+    chafa
     curl
     du-dust
     duf
@@ -30,7 +31,6 @@
     mmv-go
     niv
     rnix-lsp
-    pistol
     ripgrep
     scc
     tldr
@@ -66,6 +66,16 @@
     m-cli
     trash-cli
   ];
+
+  programs.pistol = {
+    enable = true;
+    associations = [
+      {
+        mime = "image/*";
+        command = "chafa %pistol-filename%";
+      }
+    ];
+  };
 
   programs.bat.enable = true;
   programs.broot.enable = true;
@@ -119,8 +129,9 @@
     enable = true;
 
     settings = {
-      theme = lib.mkDefault "dracula";
+      theme = lib.mkDefault "Gruvbox Dark";
       # default_layout = "compact";
+      
       pane_frames = false;
     };
   };
