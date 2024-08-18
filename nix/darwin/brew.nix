@@ -59,7 +59,7 @@
       # "yabai"
       "yq"
 
-      "zig"
+      # "zig"
     ];
 
     casks = [

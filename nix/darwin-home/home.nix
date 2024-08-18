@@ -210,6 +210,8 @@
       export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
       export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
       export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
+      export PATH="/Users/lokhmakov/.zig:$PATH"
+
       export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
 
       bindkey "\e[1;3D" backward-word # kitty ⌥←
