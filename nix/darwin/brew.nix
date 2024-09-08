@@ -25,6 +25,8 @@
       "terraform"
       "telnet"
 
+      "git-lfs"
+
       "go"
       "gopls"
 
@@ -59,18 +61,33 @@
       # "yabai"
       "yq"
 
-      # "zig"
+      "zig"
+
+      # FOR BUN
+      "automake"
+      "ccache"
+      "cmake"
+      "coreutils"
+      "gnu-sed"
+      "icu4c"
+      "libiconv"
+      "libtool"
+      "ninja"
+      "pkg-config"
+      "rust"
+      "ruby"
+      "llvm@18"
     ];
 
     casks = [
       "anydesk"
 
-      "background-music"
+      # "background-music"
       "eqmac"
 
       # k8s
       "headlamp"
-      "rancher"
+      # "rancher"
 
       "anki"
       "brave-browser"
@@ -79,34 +96,34 @@
       "eul"
       "fbreader"
       "firefox"
-      "firefox-developer-edition"
-      "figma"
+      # "firefox-developer-edition"
+      # "figma"
       "fork"
       "gitup"
-      "karabiner-elements"
+      # "karabiner-elements"
       "kap"
       # "mockoon"
-      "miniconda"
+      # "miniconda"
       "ngrok"
       "orbstack"
-      "postman"
+      # "postman"
       "raycast"
       "qbittorrent"
       "sf-symbols"
       "shottr"
-      "slack"
+      # "slack"
       "spectacle"
       "telegram"
       "the-unarchiver"
       "time-out"
-      "ubersicht"
+      # "ubersicht"
       "vlc"
       "zoom"
 
-      "visual-studio-code-insiders"
+      # "visual-studio-code-insiders"
 
-      "vmware-fusion"
-      "microsoft-teams"
+      # "vmware-fusion"
+      # "microsoft-teams"
     ];
 
     taps = [
