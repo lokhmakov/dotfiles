@@ -50,7 +50,6 @@
     #nodePackages.node2nix
     #nodePackages.pnpm
     #nodePackages.typescript
-    neovim
     purescript
 
     ## Fonts
@@ -205,6 +204,8 @@
     };
 
     initExtra = ''
+      source ~/.profile
+
       export BUN_INSTALL="$HOME/.bun"
       export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/lokhmakov/.cargo/bin:$PATH"

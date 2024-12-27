@@ -34,12 +34,13 @@
       "gh"
 
       "hyperfine"
+      "lazygit"
 
       # k8s
       "kubeseal"
 
-      # node
-      "node"
+      "nvm"
+      "neovim"
 
       # TEMPORAL
       "tctl"
@@ -53,6 +54,7 @@
       "pyenv"
       "portaudio"
       "protobuf"
+      "postgresql@15"
 
       "pulumi"
       "crd2pulumi"
@@ -99,6 +101,8 @@
       # "firefox-developer-edition"
       # "figma"
       "fork"
+
+      "ghostty"
       "gitup"
       # "karabiner-elements"
       "kap"
@@ -107,6 +111,7 @@
       "ngrok"
       "orbstack"
       # "postman"
+      "prince"
       "raycast"
       "qbittorrent"
       "sf-symbols"
