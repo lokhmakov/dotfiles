@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }: {
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   homebrew = {
     enable = true;
@@ -10,9 +10,12 @@
 
     brews = [
       "abseil"
+      "atlas"
       "awscli@2"
 
       # "bun"
+      # "bruno"
+      # "bruno-cli"
 
       "cloudflared"
 
@@ -21,8 +24,9 @@
       "dive"
       "caddy"
       "cmake"
+      "entr"
       "grpc"
-      "terraform"
+      "hashicorp/tap/terraform"
       "telnet"
 
       "git-lfs"
@@ -83,6 +87,9 @@
 
     casks = [
       "anydesk"
+      "amethyst"
+
+      "bruno"
 
       # "background-music"
       "eqmac"
@@ -132,6 +139,8 @@
     ];
 
     taps = [
+      "hashicorp/tap"
+
       "homebrew/cask-versions"
       "cloudfoundry/tap" # cf-cli@8
 

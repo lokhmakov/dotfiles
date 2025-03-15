@@ -9,7 +9,7 @@
   nix.trustedUsers = [
     "@admin"
   ];
-  users.nix.configureBuildUsers = true;
+  #users.nix.configureBuildUsers = true;
 
   users = {
     users = {
@@ -21,7 +21,7 @@
   };
 
   # Enable experimental nix command and flakes
-  nix.package = pkgs.nixUnstable;
+  nix.package = pkgs.nixVersions.stable;
   nix.extraOptions = ''
     keep-derivations = false
     auto-optimise-store = false
@@ -34,7 +34,7 @@
   programs.zsh.enable = true;
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   # Apps
   # `home-manager` currently has issues adding them to `~/Applications`
@@ -51,18 +51,22 @@
   programs.nix-index.enable = true;
 
   # Fonts
-  fonts.enableFontDir = true;
-  fonts.fonts = with pkgs; [
+  #fonts.enableFontDir = true;
+  fonts.packages = with pkgs; [
     ibm-plex
     recursive
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
+    #(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  ids.gids.nixbld = 30000;
+  system.stateVersion = 5;
 
   # Keyboard
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
 
   # Add ability to used TouchID for sudo authentication
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
 }

@@ -30,7 +30,6 @@
     kubernetes-helm
     mmv-go
     niv
-    rnix-lsp
     ripgrep
     scc
     tldr
@@ -218,6 +217,10 @@
 
       bindkey "\e[1;3D" backward-word # kitty ⌥←
       bindkey "\e[1;3C" forward-word # kitty ⌥→
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+      [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
     '' + builtins.readFile ./configs/.p10k.zsh;

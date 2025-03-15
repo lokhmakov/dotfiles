@@ -28,7 +28,6 @@
               nix-index
               niv
               purescript
-              rnix-lsp
               scc;
           })
         );
@@ -44,6 +43,7 @@
             {
               nixpkgs = nixpkgsConfig;
               home-manager = {
+                backupFileExtension = "backup";
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.lokhmakov.imports = [
