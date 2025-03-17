@@ -125,6 +125,7 @@
 
   programs.zellij = {
     enable = true;
+    enableZshIntegration = false;
 
     settings = {
       theme = lib.mkDefault "Gruvbox Dark";

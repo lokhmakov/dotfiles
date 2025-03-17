@@ -90,6 +90,7 @@
       "amethyst"
 
       "bruno"
+      "btp"
 
       # "background-music"
       "eqmac"
