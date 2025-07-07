@@ -27,6 +27,7 @@
       "entr"
       "grpc"
       "hashicorp/tap/terraform"
+      "jj"
       "telnet"
 
       "git-lfs"
@@ -52,9 +53,11 @@
 
       "oha"
       "openjdk"
+      "openblas"
+      "sst/tap/opencode"
       # "sketchybar"
       # "skhd"
-      "python@3.9"
+      "python@3.12"
       "pyenv"
       "portaudio"
       "protobuf"
@@ -91,7 +94,6 @@
 
       "bruno"
       "btp"
-
       # "background-music"
       "eqmac"
 
@@ -111,9 +113,11 @@
       "fork"
 
       "ghostty"
-      "gitup"
+      # "gitup"
       # "karabiner-elements"
       "kap"
+      "macwhisper"
+      "siyuan"
       # "mockoon"
       # "miniconda"
       "ngrok"
@@ -140,6 +144,7 @@
     ];
 
     taps = [
+      "sst/tap"
       "hashicorp/tap"
 
       "homebrew/cask-versions"

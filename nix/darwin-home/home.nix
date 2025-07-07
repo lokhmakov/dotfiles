@@ -36,6 +36,8 @@
     viu
     wget
 
+    nixfmt-rfc-style
+
     # go
     #go
     #gopls
@@ -206,12 +208,15 @@
     initExtra = ''
       source ~/.profile
 
+      export EDITOR="nvim"
       export BUN_INSTALL="$HOME/.bun"
       export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
       export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
       export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
       export PATH="/Users/lokhmakov/project/oven/bun/build:$PATH"
+      export PATH="/Users/lokhmakov/.local/bin:$PATH"
+      export PATH=$(pyenv root)/shims:$PATH
       # export PATH="/Users/lokhmakov/.zig:$PATH"
 
       export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
