@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   home.username = "lokhmakov";
   home.stateVersion = "22.05";
   programs.home-manager.enable = true;
@@ -12,60 +18,67 @@
 
   home.file.".config/karabiner/karabiner.json".text = builtins.readFile ./configs/karabiner.json;
 
-  home.packages = with pkgs; [
-    bottom
-    cachix
-    coreutils
-    chafa
-    curl
-    du-dust
-    duf
-    eza
-    gnused
-    httpie
-    imagemagick
-    jq
-    kubectl
-    kubectx
-    kubernetes-helm
-    mmv-go
-    niv
-    ripgrep
-    scc
-    tldr
-    viu
-    wget
+  home.packages =
+    with pkgs;
+    [
+      bottom
+      cachix
+      colmena
+      coreutils
+      chafa
+      curl
+      du-dust
+      duf
+      eza
+      gnused
+      httpie
+      imagemagick
+      just
+      jq
+      kubectl
+      kubectx
+      kubernetes-helm
+      mmv-go
+      ripgrep
+      scc
+      tldr
+      viu
+      wget
 
-    nixfmt-rfc-style
+      nixfmt-rfc-style
+      nil
+      nixd
+      niv
 
-    # go
-    #go
-    #gopls
+      # go
+      #go
+      #gopls
 
-    # rust
-    # rustc
-    rustup
+      # rust
+      # rustc
+      rustup
 
-    # NodeJs
-    #nodejs
-    #nodePackages.node2nix
-    #nodePackages.pnpm
-    #nodePackages.typescript
-    purescript
+      # NodeJs
+      #nodejs
+      #nodePackages.node2nix
+      #nodePackages.pnpm
+      #nodePackages.typescript
+      purescript
 
-    ## Fonts
-    meslo-lgs-nf
-    jetbrains-mono
-    fira
-    fira-code
-    source-sans-pro
-    source-code-pro
-    font-awesome_5
-  ] ++ lib.optionals stdenv.isDarwin [
-    cocoapods
-    m-cli
-    trash-cli
-  ];
+      ## Fonts
+      meslo-lgs-nf
+      jetbrains-mono
+      fira
+      fira-code
+      source-sans-pro
+      source-code-pro
+      font-awesome_5
+    ]
+    ++ lib.optionals stdenv.isDarwin [
+      cocoapods
+      m-cli
+      trash-cli
+    ];
 
   programs.pistol = {
     enable = true;
@@ -132,7 +145,7 @@
     settings = {
       theme = lib.mkDefault "Gruvbox Dark";
       # default_layout = "compact";
-      
+
       pane_frames = false;
     };
   };
@@ -205,30 +218,32 @@
       mup = "~/.dotfiles/nix/mac-up.sh";
     };
 
-    initExtra = ''
-      source ~/.profile
+    initExtra =
+      ''
+        source ~/.profile
 
-      export EDITOR="nvim"
-      export BUN_INSTALL="$HOME/.bun"
-      export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
-      export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
-      export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
-      export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
-      export PATH="/Users/lokhmakov/project/oven/bun/build:$PATH"
-      export PATH="/Users/lokhmakov/.local/bin:$PATH"
-      export PATH=$(pyenv root)/shims:$PATH
-      # export PATH="/Users/lokhmakov/.zig:$PATH"
+        export EDITOR="nvim"
+        export BUN_INSTALL="$HOME/.bun"
+        export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
+        export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
+        export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
+        export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
+        export PATH="/Users/lokhmakov/project/oven/bun/build:$PATH"
+        export PATH="/Users/lokhmakov/.local/bin:$PATH"
+        export PATH=$(pyenv root)/shims:$PATH
+        # export PATH="/Users/lokhmakov/.zig:$PATH"
 
-      export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
+        export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
 
-      bindkey "\e[1;3D" backward-word # kitty ⌥←
-      bindkey "\e[1;3C" forward-word # kitty ⌥→
+        bindkey "\e[1;3D" backward-word # kitty ⌥←
+        bindkey "\e[1;3C" forward-word # kitty ⌥→
 
-      export NVM_DIR="$HOME/.nvm"
-      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-      [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+        [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-      export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
-    '' + builtins.readFile ./configs/.p10k.zsh;
+        export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
+      ''
+      + builtins.readFile ./configs/.p10k.zsh;
   };
 }

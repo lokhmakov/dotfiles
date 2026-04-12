@@ -72,6 +72,10 @@
 
       "zig"
 
+      # FOR NIX
+      "alejandra"
+      "nixfmt"
+
       # FOR BUN
       "automake"
       "ccache"
@@ -117,7 +121,6 @@
       # "karabiner-elements"
       "kap"
       "macwhisper"
-      "siyuan"
       # "mockoon"
       # "miniconda"
       "ngrok"
@@ -135,6 +138,7 @@
       "time-out"
       # "ubersicht"
       "vlc"
+      "zed"
       "zoom"
 
       # "visual-studio-code-insiders"
