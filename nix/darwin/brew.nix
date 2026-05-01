@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   # services.nix-daemon.enable = true;
 
   homebrew = {
@@ -12,6 +18,10 @@
       "abseil"
       "atlas"
       "awscli@2"
+
+      "sops"
+      "age"
+      "age-plugin-se"
 
       # "bun"
       # "bruno"
@@ -51,6 +61,7 @@
       "tctl"
       "temporal"
 
+      "oci-cli"
       "oha"
       "openjdk"
       "openblas"

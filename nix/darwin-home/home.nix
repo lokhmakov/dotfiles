@@ -233,6 +233,8 @@
 
         export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
 
+        export SOPS_AGE_KEY_FILE=~/.config/sops/age/se-key.txt
+
         bindkey "\e[1;3D" backward-word # kitty ⌥←
         bindkey "\e[1;3C" forward-word # kitty ⌥→
 
