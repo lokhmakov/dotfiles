@@ -215,6 +215,8 @@
 
       mbuild = "~/.dotfiles/nix/mac-build.sh";
       mup = "~/.dotfiles/nix/mac-up.sh";
+
+      tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     };
 
     initExtra = ''
