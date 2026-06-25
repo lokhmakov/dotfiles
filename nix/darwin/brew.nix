@@ -98,7 +98,6 @@
       "libtool"
       "ninja"
       "pkg-config"
-      "rust"
       "ruby"
       "llvm@18"
     ];

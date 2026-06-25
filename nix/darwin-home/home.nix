@@ -224,13 +224,13 @@
 
         export EDITOR="nvim"
         export BUN_INSTALL="$HOME/.bun"
-        export PATH="/opt/homebrew/opt/libpq/bin;$BUN_INSTALL/bin:$PATH"
+        export PATH="/opt/homebrew/opt/libpq/bin:$BUN_INSTALL/bin:$PATH"
         export PATH="/Users/lokhmakov/.cargo/bin:$PATH"
         export PATH="/Users/lokhmakov/.npm-packages/bin:$PATH"
         export PATH="/Users/lokhmakov/.temporalio/bin:$PATH"
         export PATH="/Users/lokhmakov/project/oven/bun/build:$PATH"
         export PATH="/Users/lokhmakov/.local/bin:$PATH"
-        export PATH=$(pyenv root)/shims:$PATH
+        export PATH="$HOME/.pyenv/shims:$PATH"
         # export PATH="/Users/lokhmakov/.zig:$PATH"
 
         export CARGO="/etc/profiles/per-user/lokhmakov/bin/cargo"
@@ -241,8 +241,15 @@
         bindkey "\e[1;3C" forward-word # kitty ⌥→
 
         export NVM_DIR="$HOME/.nvm"
-        [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-        [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+        # Lazy-load nvm: eager sourcing ran nvm's auto-`use` on every shell
+        # (~800ms) only for it to be shadowed by vite-plus's node anyway.
+        # nvm.sh is now sourced on first `nvm` call instead.
+        nvm() {
+          unset -f nvm
+          [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+          nvm "$@"
+        }
 
       export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'; # Fix tmux suggestion color
 
